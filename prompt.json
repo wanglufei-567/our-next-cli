@@ -1,0 +1,81 @@
+[
+  {
+    "name": "preset",
+    "type": "list",
+    "message": "Please pick a preset:",
+    "choices": [
+      {
+        "name": "Default (Vue 3)(@vue/cli-plugin-babel,@vue/cli-plugin-eslint)",
+        "value": "Default (Vue 3)"
+      },
+      {
+        "name": "Default (Vue 2)(@vue/cli-plugin-babel,@vue/cli-plugin-eslint)",
+        "value": "Default (Vue 2)"
+      },
+      {
+        "name": "Manually select features",
+        "value": "__manual__"
+      }
+    ]
+  },
+  {
+    "name": "features",
+    "when": "answers => answers.preset === '__manual__'",
+    "type": "checkbox",
+    "message": "Check the features needed for your project:",
+    "choices": [
+      {
+        "name": "Babel",
+        "value": "babel",
+        "short": "Babel",
+        "description": "Transpile modern JavaScript to older versions (for compatibility)",
+        "link": "https://babeljs.io/",
+        "checked": true
+      },
+      {
+        "name": "Router",
+        "value": "router",
+        "description": "Structure the app with dynamic pages",
+        "link": "https://router.vuejs.org/"
+      }
+    ],
+    "pageSize": 10
+  },
+  {
+    "name": "useConfigFiles",
+    "when": "answers => answers.preset === '__manual__'",
+    "type": "list",
+    "message": "Where do you prefer placing config for Babel, ESLint, etc.?",
+    "choices": [
+      {
+        "name": "In dedicated config files",
+        "value": "files"
+      },
+      {
+        "name": "In package.json",
+        "value": "pkg"
+      }
+    ]
+  },
+  {
+    "name": "save",
+    "when": "answers => answers.preset === '__manual__'",
+    "type": "confirm",
+    "message": "Save this as a preset for future projects?",
+    "default": false
+  },
+  {
+    "name": "saveName",
+    "when": "answers => answers.save,",
+    "type": "input",
+    "message": "Save preset as:"
+  },
+  {
+    "name": "historyMode",
+    "when": "[Function: when]",
+    "type": "confirm",
+    "message": "Use history mode for router? \u001b[33m(Requires proper server setup for index fallback in production)\u001b[39m",
+    "description": "By using the HTML5 History API, the URLs don't need the '#' character anymore.",
+    "link": "https://router.vuejs.org/guide/essentials/history-mode.html"
+  }
+]

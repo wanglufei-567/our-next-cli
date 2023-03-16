@@ -1,0 +1,24 @@
+{
+  "name": "our-next-cli",
+  "version": "1.0.0",
+  "description": "一个可以拓展的脚手架工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "next-cli": "bin/main.js"
+  },
+  "author": "Donger",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/cli-shared-utils": "^5.0.8",
+    "commander": "^10.0.0",
+    "ejs": "^3.1.9",
+    "fs-extra": "^11.1.0",
+    "globby": "^11.0.2",
+    "inquirer": "^8.2.5",
+    "isbinaryfile": "^5.0.0",
+    "javascript-stringify": "^2.1.0"
+  }
+}
